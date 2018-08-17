@@ -8,13 +8,22 @@ spring:
         jdbc-url: jdbc:mysql://localhost/oauth2
         username: root
         password:
-        initialization-mode: always
+        initialization-mode: never
     jpa:
       hibernate:
         ddl-auto: none
+
+
 # --- server
 server:
   port: 8083
+
+
+security:
+  oauth2:
+    client:
+      accessTokenUri: http://localhost:8082/oauth/token
+      userAuthorizationUri: https://localhost:8082/oauth/authorize
 
 
 
